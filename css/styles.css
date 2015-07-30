@@ -1,5 +1,6 @@
 html, body {
 	height: 100%;
+	width: 100%;
 	margin: 0;
 	font-family: 'Ubuntu Condensed', sans-serif;
 }
@@ -32,6 +33,8 @@ h1{
 	font-size: 2.7em;
 	text-shadow: rgb(3, 3, 3) 4px 6px 4px;
 	margin: 0.35em 0;
+	border-bottom: 2px solid white;
+
 }
 
 h2{
@@ -58,3 +61,22 @@ a {
 	color: aliceblue
 
 }
+
+ul{
+	padding-left: 0;
+	width: 80%;
+	margin: 0 auto;
+}
+
+#choices {
+	color: white;
+	width: 88%;
+	text-align: left;
+
+}
+
+ul li {
+	list-style: none;
+	
+}
+
