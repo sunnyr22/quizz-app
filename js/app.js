@@ -56,12 +56,17 @@ $(document).ready(function() {
 
   // new game 
   function newGame () {
-  	$("#quiz").css("display","none");
-  	$(".sub-head").show;
-  	$("#start").show;
   	currentQuestion = 0;
   	currentAnswers = 0;
   	numRight = 0;
+    $("#quiz, #playAgain, .pa").hide();
+    $(".sub-head").show();
+    $("#start").show();
+  	$("#choices input:radio").attr("checked", false);
+    $("#choices input:radio").removeAttr("disabled");
+    $("#submitAnswer .ca").text("Check Answer").removeClass("incorrect correct inactive");
+    $("#count h2").remove();
+    updateQuesion();
   }
 
   // On Clicking Start
@@ -120,13 +125,14 @@ $(document).ready(function() {
     if (currentQuestion === 4) {
       $(".nq").hide();
       $(".pa").show();
-      alert("You got " + numRight + " out of 5 questions right!")
+      // alert("You got " + numRight + " out of 5 questions right!")
+      $("#count").html("<h2> You got " + numRight + " out of 5 correct!</h2>");
     }
   });
 
   $("#playAgain").click(function(e){
-  	e.preventDefault();
   	newGame();
   });
+
 
 });
